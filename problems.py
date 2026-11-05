@@ -174,3 +174,5 @@ print(f"Remaining development hours available: {part_time_dev}")
 # Print final output
 print(f"Awesome, so for your project you need {datasets_output} new datasets, {apps_output} apps, {automations_output} automations, {reports_output} reports, {documentation_output} documentation, and {training_output} training. The team will work diligently to fulfill your request, and keep you updated! Thank you.")
                          
+# Source
+# https://docs.python.org/3/tutorial/controlflow.html
