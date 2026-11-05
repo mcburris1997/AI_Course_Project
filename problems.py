@@ -36,6 +36,9 @@ else:
      var_datasets = (var_datasets * 4)
      print(f"Your requested dataset component(s) will take {var_datasets} hours to complete")
 
+# Store total number of datasets for final output
+datasets_output = (var_datasets/4)
+
 # Check to see if the requested components exceed available development hours
 if var_datasets <= 80:
      print("Development time is available to meet this request!")
@@ -57,6 +60,9 @@ else:
      print(f"Your requested app component(s) will take {var_app} hours to complete.")
 var_running_total = (var_datasets + var_app)
 
+# Store total number of apps for final output
+apps_output = (var_app/16)
+
 # Check to see if the requested components exceed available development hours
 if var_app <= 80:
      print("Development time is available to meet this request!")
@@ -76,6 +82,9 @@ else:
      var_automation = (var_automation * 8)
      print(var_automation)
 var_running_total = (var_datasets + var_app + var_automation)
+
+# Store total number of automations for final output
+automations_output = (var_automation/8)
 
 # Check to see if the requested components exceed available development hours
 if var_running_total <= 80:
@@ -97,6 +106,9 @@ else:
      print(var_reports)
 var_running_total_2 = (var_reports)
 
+# Store total number of reports for final output
+reports_output = (var_reports/12)
+
 # Check to see if the requested components exceed available development hours
 if var_running_total_2 <= 40:
      print("Development time is available to meet this request!")
@@ -109,13 +121,19 @@ print(f"Remaining development hours available: {part_time_dev}")
 
 # Gather whether or not documentation is needed for the project
 var_documentation = 0
-var_documentation = int(input("Do you need documentation? If yes, please type 1 and if no, please type 2"))
+var_documentation = int(input("Do you need documentation? If yes, please type 1 and if no, please type 0: "))
 if var_documentation == 0:
      print("Sounds good")
 else:
      var_documentation = 4
      print(var_documentation)
 var_running_total = (var_datasets + var_app + var_automation + var_documentation)
+
+# Store whether or not documentation is needed
+if var_documentation == 0:
+     documentation_output = 0
+else:
+     documentation_output = 1
 
 # Check to see if the requested components exceed available development hours
 if var_running_total <= 80:
@@ -129,13 +147,19 @@ print(f"Remaining development hours available: {full_time_dev}")
 
 # Gather whether or not training is needed for the project
 var_training = 0
-var_training = int(input("Do you need training? If yes, please type 1 and if no, please type 2"))
+var_training = int(input("Do you need training? If yes, please type 1 and if no, please type 0: "))
 if var_training == 0:
      print("Sounds good")
 else:
      var_training = 4
      print(var_training)
 var_running_total_2 = (var_reports + var_training)
+
+# Store whether or not training is needed
+if var_training == 0:
+     training_output = 0
+else:
+     training_output = 1
 
 # Check to see if the requested components exceed the available development hours
 if var_running_total_2 <= 40:
@@ -146,4 +170,7 @@ else:
 # Update the development hours that are available
 part_time_dev = (part_time_dev - var_training)
 print(f"Remaining development hours available: {part_time_dev}")
+
+# Print final output
+print(f"Awesome, so for your project you need {datasets_output} new datasets, {apps_output} apps, {automations_output} automations, {reports_output} reports, {documentation_output} documentation, and {training_output} training. The team will work diligently to fulfill your request, and keep you updated! Thank you.")
                          
