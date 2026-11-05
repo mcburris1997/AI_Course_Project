@@ -15,14 +15,36 @@ report = 12
 documention = 4
 trainings = 4
 
-# Define initial hour values available - 1 full-time developer specializing in dataset, app, automation, and documentation. 1 part-time developer specializing in reports and training.
+# Define initial hour values available - 1 full-time developer specializing in dataset, app, automation, and documentation.
+# 1 part-time developer specializing in reports and training.
 full_time_dev = 80
 part_time_dev = 40
 
-# Situation 1 - A solution that requires 1 app, 1 automattions, 1 documentation, and 1 training
+# This code can be used to run various project scenarios. It is designed to determine if a project can be taken on
+# given the fact that there is 1 full-time and 1 part-time developer both specializing is different key areas.
 
 # Initial message to start collecting project requirement data
 print("Thank you for submitting your project request. Please answer the following questions using whole number integers (ex. 1, 2, 3...) to help plan your project.")
+
+# Gather whether or not new datasets are needed for this project
+var_datasets = 0
+var_datasets = int(input("Do you need a new dataset? If yes, please type how many (ex. 1, 2, 4, ...) and if not then type 0 for No: "))
+if var_datasets == 0:
+     var_datasets = 0
+     print("Sounds good")
+else:
+     var_datasets = (var_datasets * 4)
+     print(f"Your requested dataset component(s) will take {var_datasets} hours to complete")
+
+# Check to see if the requested components exceed available development hours
+if var_datasets <= 80:
+     print("Development time is available to meet this request!")
+else:
+     print(f"Sorry, development time is NOT available to meet this request. This request would take {var_datasets} hours but only {full_time_dev} hours are currently available.")
+
+# Update the development hours that are available
+full_time_dev = (full_time_dev - var_datasets)
+print(f"Remaining development hours available: {full_time_dev}")
 
 # Gather whether or not apps are needed for the project
 var_app = 0
@@ -33,8 +55,9 @@ if var_app == 0:
 else:
      var_app = (var_app * 16)
      print(f"Your requested app component(s) will take {var_app} hours to complete.")
+var_running_total = (var_datasets + var_app)
 
-# Check to see if the requested components exceed current development hours
+# Check to see if the requested components exceed available development hours
 if var_app <= 80:
      print("Development time is available to meet this request!")
 else:
@@ -52,18 +75,75 @@ if var_automation == 0:
 else:
      var_automation = (var_automation * 8)
      print(var_automation)
-var_running_total = (var_app + var_automation)
+var_running_total = (var_datasets + var_app + var_automation)
 
-# Check to see if the requested components exceed current development hours
+# Check to see if the requested components exceed available development hours
 if var_running_total <= 80:
      print("Development time is available to meet this request!")
 else:
-     print(f"Sorry, development time is NOT available to meet this request. this project component would take {var_automation} hours to complete but only {full_time_dev} hours are available")
+     print(f"Sorry, development time is NOT available to meet this request. This project component would take {var_automation} hours to complete but only {full_time_dev} hours are available")
 
+# Update the development hours that are available
+full_time_dev = (full_time_dev - var_automation)
+print(f"Remaining development hours available: {full_time_dev}")
 
+# Gather whether or not reports are needed for the project
+var_reports = 0
+var_reports = int(input("Do you need a report? If yes, please type how many (ex. 1, 2, 4, ...) and if not then type 0 for No: "))
+if var_reports == 0:
+     print("Sounds good")
+else:
+     var_reports = (var_reports * 12)
+     print(var_reports)
+var_running_total_2 = (var_reports)
 
+# Check to see if the requested components exceed available development hours
+if var_running_total_2 <= 40:
+     print("Development time is available to meet this request!")
+else:
+     print(f"Sorry, development time is NOT available to meet this request. This project component would take {var_reports} hours to complete but only {part_time_dev} hours are available")
 
+# Update the development hours that are available
+part_time_dev = (part_time_dev - var_reports)
+print(f"Remaining development hours available: {part_time_dev}")
 
+# Gather whether or not documentation is needed for the project
+var_documentation = 0
+var_documentation = int(input("Do you need documentation? If yes, please type 1 and if no, please type 2"))
+if var_documentation == 0:
+     print("Sounds good")
+else:
+     var_documentation = 4
+     print(var_documentation)
+var_running_total = (var_datasets + var_app + var_automation + var_documentation)
 
-# Gather inputs
+# Check to see if the requested components exceed available development hours
+if var_running_total <= 80:
+     print("Development time is available to meet this request!")
+else:
+     print(f"Sorry, development time is NOT available to meet this request. This project component would take {var_documentation} hours to complete but only {full_time_dev} hours are available")
 
+# Update the development hours that are available
+full_time_dev = (full_time_dev - var_documentation)
+print(f"Remaining development hours available: {full_time_dev}")
+
+# Gather whether or not training is needed for the project
+var_training = 0
+var_training = int(input("Do you need training? If yes, please type 1 and if no, please type 2"))
+if var_training == 0:
+     print("Sounds good")
+else:
+     var_training = 4
+     print(var_training)
+var_running_total_2 = (var_reports + var_training)
+
+# Check to see if the requested components exceed the available development hours
+if var_running_total_2 <= 40:
+     print("Development time is available to meet this request!")
+else:
+     print(f"Sorry, development time is NOT available to meet this request. This project component would take {var_training} hours to complete but only {part_time_dev} hours are available")
+
+# Update the development hours that are available
+part_time_dev = (part_time_dev - var_training)
+print(f"Remaining development hours available: {part_time_dev}")
+                         
