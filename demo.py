@@ -1,6 +1,3 @@
-import problems as prb
-import algorithms as alg
-
 '''
 This file will contain the code needed to run a demonstration of your project. 
 
@@ -14,5 +11,3 @@ algorithm and one player uses another. If your problem is snake, you might show 
 (whichever comes first).
 '''
 
-demoGame = prb.Game(prb.TicTacToe(),alg.RandomAgent(),alg.RandomAgent())
-demoGame.playGame()
