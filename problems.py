@@ -20,21 +20,13 @@ trainings = 4
 full_time_dev = 80
 part_time_dev = 40
 
-# This code can be used to run various project scenarios. It is designed to determine if a project can be taken on
-# given the fact that there is 1 full-time and 1 part-time developer both specializing is different key areas.
+# This code is an example of my project with pre-defined numbers of components. It is designed to demonstrate a simpler, pre-determined version
+# of what I have in alrorithms.py
 
-# Initial message to start collecting project requirement data
-print("Thank you for submitting your project request. Please answer the following questions using whole number integers (ex. 1, 2, 3...) to help plan your project.")
-
-# Gather whether or not new datasets are needed for this project
-var_datasets = 0
-var_datasets = int(input("Do you need a new dataset? If yes, please type how many (ex. 1, 2, 4, ...) and if not then type 0 for No: "))
-if var_datasets == 0:
-     var_datasets = 0
-     print("Sounds good")
-else:
-     var_datasets = (var_datasets * 4)
-     print(f"Your requested dataset component(s) will take {var_datasets} hours to complete")
+# 2 datasets
+var_datasets = 2
+var_datasets = (var_datasets * 4)
+print(f"Your requested dataset component(s) will take {var_datasets} hours to complete")
 
 # Store total number of datasets for final output
 datasets_output = (var_datasets/4)
@@ -50,14 +42,9 @@ full_time_dev = (full_time_dev - var_datasets)
 print(f"Remaining development hours available: {full_time_dev}")
 
 # Gather whether or not apps are needed for the project
-var_app = 0
-var_app = int(input("Do you need an app? If yes, please type how many (ex. 1, 2, 4...) and if not then type 0 for No: "))
-if var_app == 0:
-    var_app = 0
-    print("Sounds good")
-else:
-     var_app = (var_app * 16)
-     print(f"Your requested app component(s) will take {var_app} hours to complete.")
+var_app = 1
+var_app = (var_app * 16)
+print(f"Your requested app component(s) will take {var_app} hours to complete.")
 var_running_total = (var_datasets + var_app)
 
 # Store total number of apps for final output
@@ -74,13 +61,9 @@ full_time_dev = (full_time_dev - var_app)
 print(f"Remaining development hours available: {full_time_dev}")
 
 # Gather whether or not automations are needed for the project
-var_automation = 0
-var_automation = int(input("Do you need an automation? If yes, please type how many (ex. 1, 2, 4, ...) and if not then type 0 for No: "))
-if var_automation == 0:
-     print("Sounds good")
-else:
-     var_automation = (var_automation * 8)
-     print(var_automation)
+var_automation = 3
+var_automation = (var_automation * 8)
+print(var_automation)
 var_running_total = (var_datasets + var_app + var_automation)
 
 # Store total number of automations for final output
@@ -97,13 +80,9 @@ full_time_dev = (full_time_dev - var_automation)
 print(f"Remaining development hours available: {full_time_dev}")
 
 # Gather whether or not reports are needed for the project
-var_reports = 0
-var_reports = int(input("Do you need a report? If yes, please type how many (ex. 1, 2, 4, ...) and if not then type 0 for No: "))
-if var_reports == 0:
-     print("Sounds good")
-else:
-     var_reports = (var_reports * 12)
-     print(var_reports)
+var_reports = 3
+var_reports = (var_reports * 12)
+print(var_reports)
 var_running_total_2 = (var_reports)
 
 # Store total number of reports for final output
@@ -120,13 +99,9 @@ part_time_dev = (part_time_dev - var_reports)
 print(f"Remaining development hours available: {part_time_dev}")
 
 # Gather whether or not documentation is needed for the project
-var_documentation = 0
-var_documentation = int(input("Do you need documentation? If yes, please type 1 and if no, please type 0: "))
-if var_documentation == 0:
-     print("Sounds good")
-else:
-     var_documentation = 4
-     print(var_documentation)
+var_documentation = 1
+var_documentation = 4
+print(var_documentation)
 var_running_total = (var_datasets + var_app + var_automation + var_documentation)
 
 # Store whether or not documentation is needed
@@ -146,13 +121,9 @@ full_time_dev = (full_time_dev - var_documentation)
 print(f"Remaining development hours available: {full_time_dev}")
 
 # Gather whether or not training is needed for the project
-var_training = 0
-var_training = int(input("Do you need training? If yes, please type 1 and if no, please type 0: "))
-if var_training == 0:
-     print("Sounds good")
-else:
-     var_training = 4
-     print(var_training)
+var_training = 1
+var_training = 4
+print(var_training)
 var_running_total_2 = (var_reports + var_training)
 
 # Store whether or not training is needed
