@@ -11,3 +11,6 @@ algorithm and one player uses another. If your problem is snake, you might show 
 (whichever comes first).
 '''
 
+# I need some feedback as to how/if this is relevant for my specific project. I built my project in a way that takes text inputs,
+# and it isn't built too well in a way for an agent to attempt to use from what I can tell. Looking for some feedback on my project
+# to see if I should include something here for my particular project.
